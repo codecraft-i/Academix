@@ -8,18 +8,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 const slides = [
   {
-    img: "https://www.oxfordscholastica.com/wp-content/uploads/2023/07/cambridge-college.jpg",
-    name: "Bekzod Tursunov",
-    quote:
-      "Studycare jamoasi hayratlanarli! Ularning professionalligi va tafsilotlarga eʼtibori mening arizamning muvoffaqiyatli bo‘lishini taʼminladi. Men Studycare Uzbekistan’ni chet elda o‘qishni rejalashtirayotgan har bir kishiga tavsiya qilaman. rejalashtirayotgan har bir kishiga tavsiya qilaman. rejalashtirayotgan har bir kishiga tavsiya qilaman. rejalashtirayotgan har bir kishiga tavsiya qilaman.",
+    img: "/universities/img7.webp",
+    name: "Farruh Sobirov",
+    quote: "Acedemix made my dream of studying abroad a reality! From helping me choose the ideal university to guiding me through the visa application process, their team was by my side every step of the way. Thanks to their unwavering support, I’m now thriving at Vistula University."
   },
   {
-    img: "https://www.oxfordscholastica.com/wp-content/uploads/2023/07/cambridge-college.jpg",
-    name: "Sabina Karimova",
-    quote:
-      "Ular talabalarga mos stipendiya topishda yordamlashdi hamda intervyuga tayyorlab qo‘ydilar. Natijada men UCL’ga qabul qilindim.",
-  },
-  // ...istalgancha slayd
+    img: "/universities/img10.png",
+    name: "Sharipov Ziyodullokhon",
+    quote: "Academix transformed my aspiration to study overseas into a tangible achievement! Their expert advisors walked me through everything—from narrowing down the best-fit university to navigating the visa paperwork—and now I’m flourishing at Istanbul Aydin University thanks to their exceptional guidance."
+  }
 ];
 
     const truncateWords = (text, limit = 40) => {
@@ -49,7 +46,7 @@ export default function TestimonialCarousel2() {
           <div className="testimonialCard-cardTesti2" key={i}>
             <div
               className="bgHolder-cardTesti2"
-              style={{ backgroundImage: `url(${img})` }}
+              style={{ backgroundImage: `url(${img})`, backgroundSize: "50%", backgroundRepeat: "no-repeat"  }}
             >
               <div className="overlay-cardTesti2">
                 <h3 className="studentName-cardTesti2">{name}</h3>

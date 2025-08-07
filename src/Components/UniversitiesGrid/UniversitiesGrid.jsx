@@ -3,7 +3,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import axios from "axios";
-import "./universitiesGrid.css";
+import "./UniversitiesGrid.css";
 
 /* --- Helper: simple slugify --- */
 const slugify = (str) =>

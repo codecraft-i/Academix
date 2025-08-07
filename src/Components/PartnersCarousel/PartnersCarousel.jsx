@@ -11,6 +11,8 @@ import img3 from '/universities/img3.svg';
 import img4 from '/universities/img4.webp';
 import img5 from '/universities/img5.webp';
 import img6 from '/universities/img6.webp';
+import img7 from '/universities/img7.webp';
+import img8 from '/universities/img8.png';
 
 const logos = [
   img1,
@@ -19,6 +21,8 @@ const logos = [
   img4,
   img5,
   img6,
+  img7,
+  img8,
 ];
 
 export default function PartnersCarousel() {

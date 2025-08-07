@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./university.css";
+import "./University.css";
 import InquiryForm from "../../../Components/InquiryForm/InquiryForm";
 import TestimonialCarousel2 from "../../../Components/TestimonialCarousel2/TestimonialCarousel2";
 import Header from "../../../Components/Header/Header";

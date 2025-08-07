@@ -1,15 +1,15 @@
 // src/Components/Header/Header.jsx
 import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import "./header.css";
+import "./Header.css";
 
 import logo_e from "/logo-e.png";
 import logo_m from "/logo.png";
 import logo_w from "/logo-w.png";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   /* Glass effect on scroll */
@@ -30,14 +30,14 @@ export default function Header() {
     const updateLogo = () => {
       const width = window.innerWidth;
       if (width <= 470) {
-        setLogo(logo_e);                          // ≤470 px → compact logo
+        setLogo(logo_e);       // ≤470 px → compact logo
       } else if (window.location.pathname === "/universities") {
-        setLogo(logo_w);                          // universities page → white logo
+        setLogo(logo_w);       // universities page → white logo
       } else {
-        setLogo(logo_m);                          // default
+        setLogo(logo_m);       // default
       }
     };
-    updateLogo();                                 // on initial load
+    updateLogo();
     window.addEventListener("resize", updateLogo);
     return () => window.removeEventListener("resize", updateLogo);
   }, []);
@@ -70,7 +70,6 @@ export default function Header() {
             >
               Home
             </NavLink>
-
             <NavLink
               to="/universities"
               className={({ isActive }) =>
@@ -79,7 +78,6 @@ export default function Header() {
             >
               Study&nbsp;Abroad
             </NavLink>
-
             <NavLink
               to="/events"
               className={({ isActive }) =>
@@ -88,7 +86,6 @@ export default function Header() {
             >
               Events
             </NavLink>
-
             <NavLink
               to="/blogs"
               className={({ isActive }) =>
@@ -97,7 +94,6 @@ export default function Header() {
             >
               Blog
             </NavLink>
-
             <NavLink
               to="/contact"
               className={({ isActive }) =>
@@ -109,7 +105,11 @@ export default function Header() {
           </nav>
 
           {/* CTA (both desktop & mobile) */}
-          <Link to="/contact" className="cta-btn header-cta" style={{ textDecoration: "none" }}>
+          <Link
+            to="/contact"
+            className="cta-btn header-cta"
+            style={{ textDecoration: "none" }}
+          >
             Get&nbsp;in&nbsp;touch
           </Link>
 
@@ -126,7 +126,6 @@ export default function Header() {
 
       {/* ===== MOBILE OVERLAY ===== */}
       <nav className={`mobile-overlay${open ? " show" : ""}`}>
-        {/* Close button */}
         <button
           className="overlay-close"
           aria-label="Close menu"
@@ -134,45 +133,59 @@ export default function Header() {
         >
           <FiX size={28} />
         </button>
-
         <ul className="overlay-list">
           <li>
-            <NavLink onClick={() => setOpen(false)} to="/"
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/"
               className={({ isActive }) =>
                 `internalOlist ${isActive ? "activeResNav" : ""}`
-              }>
+              }
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpen(false)} to="/universities"
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/universities"
               className={({ isActive }) =>
                 `internalOlist ${isActive ? "activeResNav" : ""}`
-              }>
+              }
+            >
               Study&nbsp;Abroad
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpen(false)} to="/events"
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/events"
               className={({ isActive }) =>
                 `internalOlist ${isActive ? "activeResNav" : ""}`
-              }>
+              }
+            >
               Events
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpen(false)} to="/blogs"
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/blogs"
               className={({ isActive }) =>
                 `internalOlist ${isActive ? "activeResNav" : ""}`
-              }>
+              }
+            >
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setOpen(false)} to="/contact"
+            <NavLink
+              onClick={() => setOpen(false)}
+              to="/contact"
               className={({ isActive }) =>
                 `internalOlist ${isActive ? "activeResNav" : ""}`
-              }>
+              }
+            >
               Contact
             </NavLink>
           </li>

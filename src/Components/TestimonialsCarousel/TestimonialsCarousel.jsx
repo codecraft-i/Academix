@@ -4,27 +4,17 @@ import "./TestimonialsCarousel.css";
 
 const slides = [
   {
-    quote:
-      "Studycare Uzbekistan mening xorijda taʼlim olish orzularimni roʻyobga chiqardi! Toʻgʻri universitet tanlashdan tortib viza olishimgacha ularning jamoasi meni har qadamda qoʻllab-quvvatladi. Ularning sharofati bilan men hozir Constructor universitetida oʻqishni davom ettirmoqdaman.",
-    name: "Qodirbek Sa’dullayev",
-    university: "Constructor University",
-    logo: "/images/constructor.png",
+    quote: "Acedemix made my dream of studying abroad a reality! From helping me choose the ideal university to guiding me through the visa application process, their team was by my side every step of the way. Thanks to their unwavering support, I’m now thriving at Vistula University.",
+    name: "Farruh Sobirov",
+    university: "Vistula University",
+    logo: "/universities/img7.webp",
   },
   {
-    quote:
-      "Uzbekistan Studycare mening xorijda taʼlim olish orzularimni roʻyobga chiqardi! Toʻgʻri universitet tanlashdan tortib viza olishimgacha ularning jamoasi meni har qadamda qoʻllab-quvvatladi. Ularning sharofati bilan men hozir Constructor universitetida oʻqishni davom ettirmoqdaman.",
-    name: "Marifat Jamalova",
-    university: "Constructor University",
-    logo: "/images/constructor.png",
-  },
-  {
-    quote:
-      "Studycare Uzbekistan mening xorijda taʼlim olish orzularimni roʻyobga chiqardi! Toʻgʻri universitet tanlashdan tortib viza olishimgacha ularning jamoasi meni har qadamda qoʻllab-quvvatladi. Ularning sharofati bilan men hozir Constructor universitetida oʻqishni davom ettirmoqdaman.",
-    name: "Namatjon Qodirbekov",
-    university: "Constructor University",
-    logo: "/images/constructor.png",
-  },
-  // qo‘shimcha slaydlar...
+    quote: "Academix transformed my aspiration to study overseas into a tangible achievement! Their expert advisors walked me through everything—from narrowing down the best-fit university to navigating the visa paperwork—and now I’m flourishing at Istanbul Aydin University thanks to their exceptional guidance.",
+    name: "Sharipov Ziyodullokhon",
+    university: "Istanbul Aydin University",
+    logo: "/universities/img10.png",
+  }
 ];
 
 export default function TestimonialsCarousel() {

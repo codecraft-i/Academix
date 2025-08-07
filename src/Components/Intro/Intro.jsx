@@ -1,6 +1,6 @@
 // src/Components/Intro/Intro.jsx
 import React, { useCallback, useEffect, useState } from "react";
-import "./intro.css";
+import "./Intro.css";
 import {
   FaPlaneDeparture,
   FaUniversity,
