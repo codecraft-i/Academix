@@ -1,0 +1,188 @@
+/* === Umumiy konteyner === */
+.testimonial-carousel {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  /* -> Kard balandligini barqaror ushlab turish */
+  min-height: 360px;
+}
+
+/* === Chap blok === */
+.carousel-left {
+  flex: 1 1 55%;
+  background: #f5f7f9;
+  padding: 3rem 3rem 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quote ni o‘z konteyneriga joylaymiz */
+.quote-wrapper {
+  flex: 1 1 auto;              /* bo‘sh joyni egallaydi */
+  max-height: 170px;           /* quote uzun bo‘lsa, scrollga o‘tadi */
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f1b2d;
+}
+
+/* Qolgan kodlar o‘zgarishsiz */
+.divider {
+  border: none;
+  height: 1px;
+  background: #d9dee5;
+  margin-bottom: 1.5rem;
+}
+
+.author-name,
+.overlay-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.author-uni,
+.overlay-uni {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Navigatsiya tugmalari */
+.nav-btns {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #d9dee5;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.nav-btn:hover {
+  background: #0f1b2d;
+  color: #fff;
+}
+
+/* === O‘ng blok === */
+.carousel-right {
+  position: relative;
+  flex: 1 1 45%;
+  background: #000;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+.logo {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Pastki overlay */
+.overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  border: 2px solid #333;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* === Media query’lar === */
+@media (max-width: 992px) {
+  .testimonial-carousel {
+    flex-direction: column;
+  }
+  .carousel-left {
+    order: 2;
+    text-align: center;
+  }
+  .nav-btns {
+    justify-content: center;
+  }
+  .overlay {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-left {
+    padding: 2rem 1.25rem 1.5rem;
+  }
+  .quote-wrapper {
+    max-height: 150px;
+  }
+  .quote {
+    font-size: 1.1rem;
+  }
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .overlay {
+    padding: 0.75rem 1rem;
+  }
+  .overlay-name {
+    font-size: 1rem;
+  }
+}
+
+/* === Umumiy konteyner === */
+.testimonial-carousel {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 360px;            /* balandlik bir xil bo‘lib qoladi */
+}
+
+/* === Chap blok === */
+.carousel-left {
+  flex: 1 1 55%;
+  background: #f5f7f9;
+  padding: 3rem 3rem 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote {
+  flex: 1 1 auto;               /* bo‘sh joyni egallaydi */
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f1b2d;
+  margin-bottom: 1.5rem;
+  /* scroll olib tashlandi */
+}

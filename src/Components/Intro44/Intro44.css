@@ -1,0 +1,112 @@
+/* ---- Asosiy konteyner ---- */
+.intro44 {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* ---- Video fon ---- */
+.introVideo44 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* ---- Shisha qatlam (yarim shaffof + blur) ---- */
+.introGlass44 {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* ---- Markaziy overlay ---- */
+.introOverlay44 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  z-index: 1;
+}
+
+/* ---- Sarlavha ---- */
+.introTitle44 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Brend nomi ---- */
+.introBrand44 {
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: 800;
+  background: -webkit-linear-gradient(#eb6221, #f4952f);
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  padding: 5px 10px;
+  border-radius: 15px;
+
+}
+
+/* ---- Arrow tugmasi ---- */
+.arrowBtn44 {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.arrowBtn44:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+/* ---- Arrow ikonkasi + animatsiya ---- */
+.arrowIcon44 {
+  font-size: 1.5rem;
+  color: #fff;
+  animation: arrowBounce44 2s infinite;
+}
+
+@keyframes arrowBounce44 {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
+}
+
+/* ---- Kichik ekran uchun sarlavhani moslashtirish ---- */
+@media (max-width: 480px) {
+  .introTitle44 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+}
+
+.intro44 > .site-header > .header-inner > .nav-links > a,
+.intro44 > .site-header > .header-inner > .burger {
+    color: #eee !important;
+}
+.intro44 > .site-header > .header-inner > .nav-links > .active-nav {
+  color: var(--clr-primary) !important;
+}

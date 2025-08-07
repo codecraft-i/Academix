@@ -1,0 +1,54 @@
+/* src/pages/Blogs/BlogsList.css */
+.blogs {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.blogs__heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.blogs__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* 3 ta karta sig‘ishi uchun minimal breakpoint */
+@media (min-width: 992px) {
+  .blogs__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.pagination__btn {
+  border: 1px solid #d1d1d1;
+  background: #fff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 42px;
+  transition: background 0.2s ease;
+}
+
+.pagination__btn:hover:not(:disabled) {
+  background: #f4f4f4;
+}
+
+.pagination__btn--active {
+  background: #1f1f1f;
+  color: #fff;
+  cursor: default;
+}

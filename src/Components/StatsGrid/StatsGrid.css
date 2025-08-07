@@ -1,0 +1,232 @@
+/* Root colours & fonts (xohlagancha o‘zgartiring) */
+:root {
+  --grad-start: #a700ff;
+  --grad-end: #ff0066;
+  --bg: #faf8ff;
+  --text-dark: #150033;
+  --text-light: #ffffff;
+  /* --overlay: rgba(153, 0, 36, 0.55); */
+  --radius: 18px;
+  --fancy-line: rgba(255, 0, 125, 0.25);
+  --fancy-thick: 2px;
+  --transition: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Wrapper */
+.stats-wrapper {
+  padding: 4rem 1rem;
+  background: var(--bg);
+}
+
+/* Grid — 3 col → 2 col → 1 col */
+.stats-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Base card */
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  isolation: isolate;            /* gradient/overlay tartib-intizomda */
+  transition: transform var(--transition), box-shadow var(--transition);
+  will-change: transform;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Image card ---------- */
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Qizg‘ish overlay + subtle zoom */
+.image-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  mix-blend-mode: multiply;
+  transition: opacity var(--transition);
+}
+
+.image-card:hover::after {
+  opacity: 0.3;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+  transition: transform var(--transition);
+}
+
+/* ---------- Stat card ---------- */
+.stat-card {
+  color: var(--text-light);
+  padding: 2.5rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  text-align: left;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.stat-value {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* ---------- “Fancy” radial-line variant ---------- */
+.fancy {
+  background: transparent; /* radials qoplash uchun */
+  color: var(--text-dark);
+}
+
+.fancy::before,
+.fancy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+/* Gradient ost-fon (light-to-transparent) */
+.fancy::before {
+  background: linear-gradient(
+    135deg,
+    var(--grad-start),
+    var(--grad-end) 60%,
+    transparent 100%
+  );
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Radial arcs */
+.fancy::after {
+  --step: 60px;            /* radius poydevori */
+  background-image: radial-gradient(
+      circle at bottom left,
+      var(--fancy-line) var(--fancy-thick),
+      transparent calc(var(--fancy-thick) + 1px)
+    ),
+    radial-gradient(
+      circle at bottom left,
+      var(--fancy-line) var(--fancy-thick),
+      transparent calc(var(--fancy-thick) + 1px)
+    ),
+    radial-gradient(
+      circle at bottom left,
+      var(--fancy-line) var(--fancy-thick),
+      transparent calc(var(--fancy-thick) + 1px)
+    ),
+    radial-gradient(
+      circle at bottom left,
+      var(--fancy-line) var(--fancy-thick),
+      transparent calc(var(--fancy-thick) + 1px)
+    );
+  background-size: calc(var(--step) * 1) calc(var(--step) * 1),
+    calc(var(--step) * 2) calc(var(--step) * 2),
+    calc(var(--step) * 3) calc(var(--step) * 3),
+    calc(var(--step) * 4) calc(var(--step) * 4);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  pointer-events: none;
+  opacity: 0.8;
+  transform: translate(-10px, 10px);
+  transition: transform var(--transition);
+}
+
+.fancy:hover::after {
+  transform: translate(0);
+}
+
+
+/* 1️⃣  ≥1200 px da 4 ta ustun */
+@media (min-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 2️⃣  Kartalarni biroz pastroq qilish (ixtiyoriy) */
+.stat-card {
+  /* eski min-height: 260px; */
+  min-height: 220px;
+}
+
+/* A) Grid konteynerini 90 % ga cheklash */
+.stats-grid {
+  width: 90%;
+  max-width: 90%;
+  margin-inline: auto; /* markazda tursin */
+}
+
+/* B) Katta ekranlarda ustunlar ham sig‘sin, ham juda keng bo‘lmasin */
+@media (min-width: 1200px) {
+  .stats-grid {
+    /* Har bir karta eng ko‘pi bilan 1fr, eng kamida 220 px */
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
+/* C) Kartalarning balandligini biroz qisqartiramiz (ixtiyoriy) */
+.stat-card {
+  min-height: 200px; /* avval 260 yoki 220 edi */
+}
+
+#statsHeadTit {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+#statsHeadTit > div {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#statsHeadTit > div > strong {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#statsHeadTit > div > span {
+  text-align: center;
+  font-size: 1.35rem;
+  color: #818181;
+  margin-bottom: 30px;
+}

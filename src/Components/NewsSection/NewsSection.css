@@ -1,0 +1,123 @@
+/* --- Umumiy bo'lim o'rami --- */
+.news-section {
+  padding: 4rem 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  color: #111;
+  box-sizing: border-box;
+}
+
+/* --- Sarlavha va taglavha --- */
+.news-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.news-title-heading {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.news-subtitle {
+  font-size: 1.125rem;
+  color: #5c5c5c;
+  max-width: 70ch;
+  margin: 0;
+}
+
+/* --- Grid --- */
+.news-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Mobil: 1-ustun */
+@media (min-width: 480px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Planshet: 2-ustun */
+@media (min-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Karta --- */
+.news-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.news-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 1.25rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.news-category {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #8e8e8e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.news-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #111;
+}
+
+/* --- “Barchasi” tugmasi --- */
+.news-footer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.news-all-btn {
+  display: inline-block;
+  padding: 0.9rem 2.8rem;
+  background: #eb6221;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.news-all-btn:hover {
+  background: #d45418;
+}
+
+/* --- Kichik ekranlarda shriftlar biroz kichrayadi --- */
+@media (max-width: 480px) {
+  .news-card-title {
+    font-size: 1.125rem;
+  }
+}

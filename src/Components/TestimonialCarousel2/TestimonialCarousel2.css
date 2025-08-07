@@ -1,0 +1,77 @@
+/* ---------- Wrapper ---------- */
+.carouselWrapper-cardTesti2 {
+  width: 100%;
+  max-width: 580px;     /* istasangiz o'zgartiring */
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+
+/* ---------- Har bir kartaning tashqi konteyneri ---------- */
+.testimonialCard-cardTesti2 {
+  padding: 0 0.45rem;   /* Slick ichida bo'sh joy */
+  box-sizing: border-box;
+}
+
+/* ---------- Fon rasmi va overlay ---------- */
+.bgHolder-cardTesti2 {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.overlay-cardTesti2 {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+/* ---------- Matnlar ---------- */
+.studentName-cardTesti2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.studentQuote-cardTesti2 {
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- Slick nuqtalari (dots) ---------- */
+.carouselWrapper-cardTesti2 .slick-dots li button:before {
+  font-size: 10px;
+  color: #777;
+  opacity: 1;
+}
+
+.carouselWrapper-cardTesti2 .slick-dots li.slick-active button:before {
+  color: #fff;
+}
+
+/* ---------- Media query’lar ---------- */
+@media (max-width: 768px) {
+  .bgHolder-cardTesti2 { height: 340px; }
+  .studentName-cardTesti2 { font-size: 1.55rem; }
+  .studentQuote-cardTesti2 { font-size: 0.95rem; }
+}
+
+@media (max-width: 540px) {
+  .bgHolder-cardTesti2 { height: 290px; }
+  .overlay-cardTesti2 { padding: 1rem 1.25rem 1.35rem; }
+  .studentName-cardTesti2 { font-size: 1.35rem; }
+  .studentQuote-cardTesti2 { font-size: 0.88rem; }
+}
+
+@media (max-width: 380px) {
+  .bgHolder-cardTesti2 { height: 240px; }
+  .studentName-cardTesti2 { font-size: 1.15rem; }
+}

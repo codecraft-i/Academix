@@ -1,0 +1,44 @@
+.evCard {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s;
+}
+.evCard:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.evCard__img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.evCard__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 1.25rem 0;
+  line-height: 1.3;
+}
+.evCard__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem 1.25rem;
+  font-size: 0.95rem;
+  border-top: 1px solid #f1f3f5;
+  color: #4b5563;
+}
+.evCard__meta svg {
+  margin-right: 4px;
+}
+
+/* --------- Responsive --------- */
+@media (min-width: 768px) {
+  .evCard__img {
+    height: 260px;
+  }
+}

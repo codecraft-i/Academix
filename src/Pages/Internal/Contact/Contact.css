@@ -1,0 +1,74 @@
+/* src/Pages/Internal/Contact/Contact.css */
+
+/* Wrapper hamma narsani o‘rab olish uchun */
+.contact-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* --- FON GRID --- */
+.background-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  /* Grid chiziqlari */
+  background-image:
+    linear-gradient(to right, #e0e0e055 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e055 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-repeat: repeat;
+}
+
+/* Yorilib chiqadigan katakcha */
+.grid-highlight {
+  position: absolute;
+  background: rgba(100, 148, 237, 0.077);
+  animation: fadeHighlight 5s ease-in-out;
+}
+
+/* Katakning pasayish animatsiyasi */
+@keyframes fadeHighlight {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* --- KONTENT QUTISI --- */
+.conBaseBox {
+  position: relative; /* z-index ishlashi uchun */
+  z-index: 0;
+  padding: 0;      /* istalgan oraliq */
+}
+
+/* Forma va carousel yonma-yon */
+.formCon {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+
+@media (max-width: 1600px) {
+    .formCon {
+        padding-left: 5%;
+    }
+}
+
+@media (max-width: 1350px) {
+    .formCon {
+        padding-left: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.carouselWrapper-cardTesti2 {
+    margin-top: 15px;
+}

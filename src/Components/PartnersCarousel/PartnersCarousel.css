@@ -1,0 +1,70 @@
+/* --- Asosiy konteyner --- */
+.partners-wrapper {
+  width: 100%;
+  overflow: hidden;          /* Trek tashqariga chiqmasin          */
+  background: #ffffff;       /* Oq fonda logolar                   */
+  padding: 2rem 0;           /* Tepaga-pastga bo'sh joy            */
+}
+
+/* --- Slayder trek --- */
+.partners-track {
+  display: flex;
+  width: max-content;        /* Kenayishiga cheklov yo'q           */
+  animation: scroll 40s linear infinite;
+}
+
+.partners-track:hover {
+  animation-play-state: paused; /* Hover qilinsa to‘xtaydi          */
+}
+
+/* --- Har bir slayd --- */
+.partner-slide {
+  flex: 0 0 auto;            /* Shrink yo‘q, width ni qo’lda beramiz */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3.5rem;         /* Logolar orasidagi masofa           */
+}
+
+/* Rasm o'lchami – balandlikni boshqaramiz, eni avtomatik */
+.partner-slide img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(10%);    /* Biroz xira effekt                  */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.partner-slide img:hover {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+/* --- Animatsiya --- */
+@keyframes scroll {
+  0%   { transform: translateX(0);           }
+  100% { transform: translateX(-50%); } /* 50 % – logolarni ikki marta berganimiz uchun */
+}
+
+/* ---------- Media queries ---------- */
+
+/* O‘rta ekranlar (≤ 992 px) */
+@media (max-width: 992px) {
+  .partners-track { animation-duration: 30s; }
+  .partner-slide   { padding: 0 2.5rem; }
+  .partner-slide img { height: 50px; }
+}
+
+/* Kichik ekranlar (≤ 768 px) */
+@media (max-width: 768px) {
+  .partners-track { animation-duration: 25s; }
+  .partner-slide   { padding: 0 1.75rem; }
+  .partner-slide img { height: 45px; }
+}
+
+/* Juda kichik ekranlar (≤ 480 px) */
+@media (max-width: 480px) {
+  .partners-track { animation-duration: 20s; }
+  .partner-slide   { padding: 0 1.2rem; }
+  .partner-slide img { height: 40px; }
+}

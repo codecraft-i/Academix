@@ -1,0 +1,193 @@
+/* =====  O‘zgaruvchilar  ===== */
+:root {
+  --hdr-h: 4.5rem;
+  --max-w: 1280px;
+
+  --clr-txt: #1f1f1f;
+  --clr-primary: #eb6221;
+  --clr-primary-lg: #f4952f;
+
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-brd: rgba(255, 255, 255, 0.36);
+}
+
+/* =====  Header  ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--hdr-h);
+  background: none;
+  box-shadow: none;
+  /* transition: backdrop-filter 0.3s, background 0.3s, border-color 0.3s; */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+}
+.site-header.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid var(--glass-brd);
+  padding: 15px 0 0 0 !important;
+}
+.site-header.glass > .nav-links {
+  transform: translateY(-5px) !important;
+}
+
+/* ichki container */
+.header-inner {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo-img { width: 170px; height: auto; background-size: cover; }
+
+/* =====  Desktop nav  ===== */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav-links a {
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--clr-txt);
+  transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--clr-primary); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--clr-primary);
+  transition: width 0.25s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.nav-link.active-nav {
+  color: var(--clr-primary) !important;
+}
+.nav-link.active-nav::after {
+  width: 100%;
+}
+
+.internalOlist.activeResNav {
+  color: var(--clr-primary) !important;
+}
+.internalOlist {
+  position: relative;
+}
+.internalOlist::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--clr-primary);
+  transition: width 0.25s;
+}
+.internalOlist.activeResNav::after {
+  width: 100%;
+}
+/* =====  CTA  ===== */
+.cta-btn {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-lg) 100%);
+  color: #fff !important;
+  padding: 0.55rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgb(0 0 0 / 0.18); }
+.cta-btn.full { width: 100%; text-align: center; }
+.header-cta { margin-right: 0.75rem; transform: translateY(-5px); }
+
+/* =====  Burger  ===== */
+.burger {
+  background: none;
+  border: none;
+  color: var(--clr-txt);
+  cursor: pointer;
+  display: none;      /* desktopda yashirin */
+  z-index: 1100;
+  
+}
+
+/* =====  Mobile overlay ===== */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;                               /* to‘liq ekran */
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px) saturate(180%);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 1050;
+  overflow-y: auto;
+
+  /* o‘ng-yuqoridan tartib */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1.5rem;
+}
+.mobile-overlay.show { transform: translateX(0); }
+
+/* Cancel (FiX) tugmasi */
+.overlay-close {
+  background: none;
+  border: none;
+  color: var(--clr-txt);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+/* Ul ro‘yxati */
+.overlay-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.overlay-list li a {
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--clr-txt);
+  transition: color 0.25s;
+}
+.overlay-list li a:hover { color: var(--clr-primary); }
+
+/* ===== Breakpoints ===== */
+@media (max-width: 890px) {
+  .nav-links { display: none; }     /* desktop nav yashirin */
+  .burger   { display: block; }     /* burger + CTA ko‘rinadi */
+}
+@media (max-width: 769px) {
+  .mobile-overlay { display: none; }
+}
+
+
+.logo-small {
+  width: 25px;
+  height: auto;
+  background-size: cover;
+}

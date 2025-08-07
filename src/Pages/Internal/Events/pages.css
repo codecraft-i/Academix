@@ -1,0 +1,136 @@
+/* ---------- Tabs ---------- */
+.events {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+.events__tabs {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+.events__tab {
+  position: relative;
+  padding: 0.5rem 0;
+  border: none;
+  background: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+}
+.events__tab.is-active {
+  color: #c20826;
+}
+.events__tab.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: currentColor;
+  border-radius: 3px 3px 0 0;
+}
+
+/* ---------- Grid ---------- */
+.events__grid {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 640px) {
+  .events__grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .events__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.events__state {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Detail ---------- */
+.eventDetail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.eventDetail img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+.eventDetail h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.eventDetail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+.eventDetail__meta svg {
+  margin-right: 4px;
+}
+.eventDetail__desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* .eventFDataBox {
+
+} */
+.eventFDataBoxImg {
+  width: 100%;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+.eventFDataBoxImg > img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  padding: 0 20px;
+  border-radius: 100px;
+}
+
+.eventDetailsSCBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 1180px) {
+  .eventDetailsSCBox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .eventDetailsSCBox > div:last-child {
+    margin-top: 0 !important;
+  }
+}

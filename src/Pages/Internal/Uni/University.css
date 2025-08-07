@@ -1,0 +1,111 @@
+/* ---------- GENERAL WRAPPER ---------- */
+.uni-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  text-align: center;
+}
+
+/* ---------- COUNTRY PILL ---------- */
+.uni-country {
+  background: #f1f3f5;
+  border-radius: 9999px;
+  padding: 6px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ---------- TITLE ---------- */
+.uni-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+/* ---------- IMAGE ---------- */
+.uni-img-box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+}
+.uni-img-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.uni-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0 auto 40px;
+  max-width: 900px;
+}
+
+/* ---------- VIDEO ---------- */
+.uni-video {
+  margin-bottom: 50px;
+}
+.uni-video h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+.uni-video iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- BUTTON ---------- */
+.uni-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.uni-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #003c80);
+  transform: translateY(-2px);
+}
+
+/* ---------- LOADING ---------- */
+.uni-loading {
+  padding: 120px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .uni-title {
+    font-size: 2rem;
+  }
+  .uni-video iframe {
+    height: 250px;
+  }
+  .uni-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .uniDetBbox {
+    width: 100% !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}

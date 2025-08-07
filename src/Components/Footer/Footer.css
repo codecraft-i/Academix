@@ -1,0 +1,120 @@
+/* ============  ROOT  ================================================= */
+.footer {
+  background: #0e1117;          /* quyuq fon */
+  color: #f5f5f5;               /* matn — oq */
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  padding: 4rem 1.5rem 2rem;
+}
+
+/* --- GRID (top section) --------------------------------------------- */
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Columns -------------------------------------------------------- */
+.footer__col a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.footer__col a:hover { opacity: 0.7; }
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.logo span { color: #e0e0e0; }
+
+/* Description & address */
+.footer__text   { max-width: 38ch; margin-bottom: 1.5rem; }
+.footer__address{ font-style: normal; }
+
+/* --- Navigation lists ---------------------------------------------- */
+.footer__nav,
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer__nav li,
+.footer__links li { margin-bottom: 0.875rem; }
+
+/* Badge */
+.badge-wrapper { position: relative; }
+.badge {
+  display: inline-block;
+  background: #ffffff12;
+  font-size: 0.625rem;
+  letter-spacing: 0.3px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin-left: 6px;
+}
+
+/* Phone & mail */
+.footer__phone,
+.footer__mail {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Divider line */
+.footer__divider {
+  border: none;
+  border-top: 1px solid #ffffff14;
+  margin: 3rem 0 2rem;
+}
+
+/* --- Bottom row ----------------------------------------------------- */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Social icons */
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  margin-left: 0.75rem;
+  border: 1px solid #ffffff26;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background 0.25s ease, transform 0.2s;
+}
+.footer__social a:hover {
+  background: #ffffff18;
+  transform: translateY(-2px);
+}
+
+/* ============  RESPONSIVE  ========================================== */
+@media (max-width: 1023px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__extra {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+  .footer__nav, .footer__extra { margin-top: 2rem; }
+  .footer__bottom { flex-direction: column; gap: 1.5rem; }
+  .footer__social a { margin-left: 0; margin-right: 0.75rem; }
+}

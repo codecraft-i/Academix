@@ -1,0 +1,155 @@
+/* === Wrapper & Title === */
+.uni-wrapperUP {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.uni-title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* === Background dots === */
+.dotted-bgUP::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(#ff5e5e 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/* === Grid === */
+.uni-gridUP {
+  display: grid;
+  gap: 2rem;
+  /* Desktop default: 3 ustun */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Medium — 2 column */
+@media (max-width: 991px) {
+  .uni-gridUP {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small — 1 column */
+@media (max-width: 639px) {
+  .uni-gridUP {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* === Card === */
+.uni-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  height: 240px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;            /* Link still looks like a card */
+}
+
+.uni-card:focus-visible,
+.uni-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* image */
+.uni-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.uni-card:hover .uni-img {
+  filter: brightness(1);
+}
+
+/* info overlay (name) */
+.uni-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.uni-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* country chip */
+.uni-country {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #333;
+  backdrop-filter: blur(4px);
+  font-weight: 500;
+}
+
+/* ranking badge */
+.uni-rank {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: #ff5e5e;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+/* === “Barchasi” Button === */
+.uni-btn {
+  display: inline-block;
+  margin: 2.5rem auto 0;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #eb6221, #f4952f);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.uni-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}

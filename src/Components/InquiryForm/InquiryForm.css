@@ -1,0 +1,144 @@
+/* InquiryForm.css */
+
+.inquiry-wrapper44 {
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+/* --- Card / Form --- */
+.inquiry-card44 {
+  width: 100%;
+  max-width: 550px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Two-column row */
+.row44 {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Each field */
+.field44 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 1 200px;
+  margin-bottom: 1.25rem;
+}
+
+
+.field44 label,
+.field44 > label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #333;
+  text-align: left;        /* <-- ensure left-aligned labels */
+}
+
+.field44 input,
+.field44 textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.field44 input:focus,
+.field44 textarea:focus {
+  border-color: #8a2be2;
+}
+
+/* Error text */
+.error-msg44 {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #d93025;
+}
+
+/* Submit button */
+.submit-btn44 {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, #d43aff 0%, #8c2dff 100%);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.submit-btn44:hover         { opacity: 0.95; }
+.submit-btn44:active        { transform: scale(0.98); }
+.submit-btn44:disabled      { opacity: 0.6; cursor: not-allowed; }
+
+/* Success & generic-error alerts */
+.alert-success44,
+.alert-error44 {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.alert-success44 {
+  background: #e6ffec;
+  color: #087b37;
+  border: 1px solid #b4f2c9;
+}
+
+.alert-error44 {
+  background: #fff1f1;
+  color: #d93025;
+  border: 1px solid #f5baba;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .inquiry-card44 { padding: 1.5rem 1.25rem; }
+  /* .row44          { flex-direction: column; } */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .inquiry-card44 {
+    background: #1e1e1e;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  }
+  .field44 label,
+  .field44 > label { color: #f1f1f1; }
+  .field44 input,
+  .field44 textarea {
+    background: #2b2b2b;
+    border: 1px solid #444;
+    color: #fff;
+  }
+  .error-msg44    { color: #ff8a80; }
+  .alert-success44 {
+    background: #143d19;
+    color: #8ff0b6;
+    border-color: #246832;
+  }
+  .alert-error44  {
+    background: #4d1d1d;
+    color: #ff8a80;
+    border-color: #7a2e2e;
+  }
+}
