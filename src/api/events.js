@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://127.0.0.1:8000/api/events/";
+const BASE_URL = "http://45.138.159.137/api/events/";
 
 export async function getEvents({ status }) {
   // maksimal 6 ta tadbirni qaytarish uchun page_size berib yuboramiz

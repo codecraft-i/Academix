@@ -16,7 +16,7 @@ export default function NewsSection() {
   /* ------ Fetch news -------- */
   const fetchNews = useCallback(async () => {
     try {
-      const { data } = await axios.get("http://127.0.0.1:8000/api/blog/");
+      const { data } = await axios.get("http://45.138.159.137/api/blog/");
       // Optionally keep only popular posts: .filter(p => p.is_popular)
       setPosts((data?.results || []).slice(0, 6)); // first 6 posts
     } catch (err) {

@@ -22,7 +22,7 @@ export default function UniversitiesGrid() {
   const fetchUniversities = useCallback(async () => {
     try {
       const { data } = await axios.get(
-        "http://127.0.0.1:8000/site/api/universities/"
+        "http://45.138.159.137/site/api/universities/"
       );
       /*  API response shape: { count: <number>, data: [...] }  */
       const topUnis = (data?.data || []).filter((u) => u.is_top);

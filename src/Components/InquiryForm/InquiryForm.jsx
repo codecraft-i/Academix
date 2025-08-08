@@ -4,7 +4,7 @@ import "./InquiryForm.css";
 
 const API_URL =
   import.meta.env.VITE_API_URL ||
-  "http://localhost:8000/api/admissions/inquiries/";
+  "http://45.138.159.137/api/admissions/inquiries/";
 
 export default function InquiryForm() {
   const [formData, setFormData] = useState({

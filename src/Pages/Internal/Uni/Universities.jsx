@@ -15,7 +15,7 @@ import "./Universities.css";
 import Intro44 from "../../../Components/Intro44/Intro44";
 import Footer from "../../../Components/Footer/Footer";
 
-const API = "http://127.0.0.1:8000/site/api";
+const API = "http://45.138.159.137/site/api";
 
 /* → Convert any DRF/helper response to a plain array */
 const toArray = (data) => {

@@ -14,7 +14,7 @@ const University = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/site/api/universities/")
+      .get("http://45.138.159.137/site/api/universities/")
       .then((r) => {
         const found = r.data.data.find((u) => u.name === university_name);
         setUni(found);

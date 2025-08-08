@@ -2,5 +2,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:8000/api/",   // backend URL-ni moslang
+  baseURL: "http://45.138.159.137/api/",   // backend URL-ni moslang
 });

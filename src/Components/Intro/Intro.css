@@ -266,3 +266,19 @@
 @media (max-height: 540px) {
   .intro__highlights { display: none; }
 }
+
+@media (max-width: 500px) {
+  .intro__content {
+    padding-top: 150px;
+  }
+  .intro__word,
+  .intro__tagline {
+    transform: scale(0.8);
+  }
+  .intro__highlights {
+    transform: translateY(-40px) scale(0.9) !important;
+  }
+  .intro__arrow {
+    transform: translateY(-70px) scale(0.9) !important;
+  }
+}
